@@ -1,0 +1,83 @@
+<% include ../header_footer/header %>
+    <div class="row mt-2 bg-light">
+        <a class="d-flex align-items-center btn btn-light text-dark" href="/blogpost">
+            <i class="far fa-arrow-alt-circle-left fa-3x text-dark pr-2"></i>Go Back</a>
+    </div>
+    <form action="/profile/<%=currentUser._id %>?_method=PUT" method="POST">
+        <div class="row py-4">
+            <div class="col-md-2 offset-1">
+                <i class="far fa-user-circle fa-5x"></i>
+            </div>
+            <div class="col-md-6">
+                <h5>
+                    <%=foundInfo.firstname %>
+                        <%=foundInfo.lastname %>
+                </h5>
+                <p>RANKINGS :
+                    <span>8/10</span>
+                </p>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link active show" id="about-tab" data-toggle="tab" aria-controls="home" aria-selected="true">About</a>
+                    </li>
+                    <li class="nav-item"></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <a href="#" class="btn btn-light" role="button">Edit Profile</a>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-2 offset-1"></div>
+            <div class="col-md-8">
+                <div class="tab-content">
+                    <div class="tab-pane fade active show" id="about" role="tabpanel">
+                        <div class="row pb-1">
+                            <div class="col-md-6">Username</div>
+                            <div class="col-md-6">
+                                <h5>
+                                    <%=foundInfo.user.username %>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="row pb-1  d-flex align-items-center">
+                            <div class="col-md-6">Fullname</div>
+                            <div class="col-md-6 d-flex align-items-center">
+                                <input type="text" name="info[firstname]" class="form-control" aria-describedby="emailHelp" placeholder="Firstname" value="<%=foundInfo.firstname %>">
+                                <input type="text" name="info[lastname]" class="form-control" aria-describedby="emailHelp" placeholder="Lastname" value="<%=foundInfo.lastname %>">
+                            </div>
+                        </div>
+                        <div class="row pb-1  d-flex align-items-center">
+                            <div class="col-md-6">Email</div>
+                            <div class="col-md-6 d-flex align-items-center">
+                                <input type="email" name="info[email]" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" value="<%=foundInfo.email %>">
+
+                            </div>
+                        </div>
+                        <div class="row pb-1  d-flex align-items-center">
+                            <div class="col-md-6">Address</div>
+                            <div class="col-md-6 d-flex align-items-center">
+                                <input type="text" name="info[address]" class="form-control" aria-describedby="emailHelp" placeholder="Address" value="<%=foundInfo.address %>">
+
+                            </div>
+                        </div>
+                        <div class="row pb-4  d-flex align-items-center">
+                            <div class="col-md-6">Address2</div>
+                            <div class="col-md-6 d-flex align-items-center">
+                                <input type="text" name="info[address2]" class="form-control" aria-describedby="emailHelp" placeholder="Address2" value="<%=foundInfo.address2 %>">
+                            </div>
+                        </div>
+                        <div class="row pb-1  d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary">Change</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
+    <% include ../header_footer/footer %>

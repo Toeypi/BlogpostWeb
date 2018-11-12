@@ -1,0 +1,66 @@
+<% include ../../header_footer/header %>
+    <div class="bg-dark collapse" id="navbarAbout">
+        <div class="container">
+            <div class="row">
+                <div class="col-7 py-4">
+                    <h4 class="text-white">About</h4>
+                    <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few
+                        sentences long so folks can pick up some informative tidbits. Then, link them off to some social
+                        networking sites or contact information.
+                    </p>
+                </div>
+                <div class="col-4 offset-1  py-4">
+                    <div class="row d-flex align-items-center justify-content-between">
+                        <h4 class="text-white">Contact</h4>
+                        <a class="d-flex align-items-center btn btn-dark text-light" href="/blogpost">
+                            <i class="far fa-arrow-alt-circle-left fa-3x text-light pr-2"></i>Go Back</a>
+                    </div>
+
+                    <ul class="list-unstyled">
+                        <li class="text-white">Folow on twitter</li>
+                        <li class="text-white">Like on facebook</li>
+                        <li class="text-white">Email me</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark">
+        <div class="container d-flex justify-content-between">
+            <div class="navbar navbar-brand pl-0">
+                <i class="fas fa-hiking fa-lg"></i>
+                <strong> Travel</strong>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarAbout" aria-expanded="true" aria-controls="navbarAbout"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Travel</h1>
+        <p class="lead">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but
+            not too short so folks don't simply skip over it entirely.</p>
+    </div>
+
+    <div class="row">
+        <%foundTravels.forEach(function(travel){%>
+            <div class="col-4">
+                <div class="card mb-4">
+                    <img class="card-img-top" src="<%=travel.picture%>">
+                    <div class="card-body">
+                        <div class="card-text mb-2"><%=travel.body.substring(0,100)%>...</div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a  href="/blogpost/travel/<%=travel._id%>" class="btn btn-outline-secondary">Readmore</a>
+                            </div>
+                            <small class="text-muted">updated: <%=travel.date.currentDate%></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%})%>
+    </div>
+
+
+<% include ../../header_footer/footer %>

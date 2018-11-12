@@ -1,0 +1,165 @@
+<% include ./header_footer/header %>
+  <div class="row d-flex flex-nowrap justify-content-between align-items-center border-bottom">
+    <% if(currentUser) { %>
+      <div class="col-md-4 pt-1 d-flex align-items-center">
+        <a class="text-muted pr-2" href="/logout">Logout</a>
+        <a href="/profile/<%=currentUser._id%>" class="btn btn-light d-flex align-items-center">
+          <i class="fas fa-user fa-2x px-2"></i>
+          <h3 id="profile">
+            <%= currentUser.username %>
+          </h3>
+        </a>
+      </div>
+      <% } else { %>
+        <div class="col-md-4 pt-1">
+          <a class="text-muted" href="/signin">Signin</a>
+        </div>
+        <% } %>
+
+          <div class="col-md-4 text-center">
+            <a class="text-dark" id="brand">Blogpost</a>
+          </div>
+          <div class="col-md-4 d-flex justify-content-end  align-items-center">
+            <form class="form-inline mt-3 mr-2">
+              <input type="text" class="form-control  mr-sm-2" id="inlineFormInputName2" placeholder="search">
+            </form>
+            <a class="text-muted" href="#">
+              <i class="fas fa-search"></i>
+            </a>
+          </div>
+  </div>
+
+  <nav class="navbar navbar-light px-0">
+    <a class="btn btn-light">World</a>
+    <a class="btn btn-light" href="blogpost/travel">Travel</a>
+    <a class="btn btn-light">Design</a>
+    <a class="btn btn-light">Culture</a>
+    <a class="btn btn-light">Business</a>
+    <a class="btn btn-light">Politics</a>
+    <a class="btn btn-light">Opinion</a>
+    <a class="btn btn-light">Science</a>
+    <a class="btn btn-light">Health</a>
+    <a class="btn btn-light">Style</a>
+  </nav>
+
+  <div class="jumbotron jumbotron-fluid text-white bg-dark">
+    <div class="container">
+      <h1 id="bigTitle" class="display-4">Title of a post</h1>
+      <p class="lead">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its
+        layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
+      <a href="/blogpost/#">Continute reading...</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="row">
+          <div class="col-7">
+            <div class="card-body">
+              <h5 class="badge badge-primary">World</h5>
+              <h4 class="card-title">Featured post</h4>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="card-link">Continute reading...</a>
+              <p class="card-text">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p>
+            </div>
+          </div>
+          <div class="col-5">
+            <img class="card-img">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 ">
+      <div class="card">
+        <div class="row">
+          <div class="col-7">
+            <div class="card-body">
+              <h5 class="badge badge-Success">Design</h5>
+              <h4 class="card-title">Post title</h4>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="card-link">Continute reading...</a>
+              <p class="card-text">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p>
+            </div>
+          </div>
+          <div class="col-5">
+            <img class="card-img">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 32px">
+    <div class="col-sm-8">
+      <h1 id="bigTitle2" class="border-bottom">Sample post</h1>
+      <h4 id="whyipsum">Why do we use it?</h4>
+      <p class="text-muted">March 1,2014 by
+        <span class="text-primary">Author</span>
+      </p>
+      <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its
+        layout.
+        <strong>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</strong>, as opposed
+        to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and
+        web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many
+        web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes
+        on purpose (injected humour and the like).</p>
+      <h4 id="whereipsum">Where does it come from?</h4>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature
+        from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
+        looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites
+        of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
+        1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book
+        is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem
+        ipsum dolor sit amet..", comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s
+        is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero
+        are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H.
+        Rackham.
+      </p>
+    </div>
+    <div class="col-sm-4">
+      <div class="container-fluid bg-light">
+        <h5 id="about">What is Lorem Ipsum?</h5>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+          dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+          specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+          essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+          passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      </div>
+      <div id="archives">
+        <h5 id="archive">Archives</h5>
+        <ul id="archiveList">
+          <li>
+            <a href="#">March 2014</a>
+          </li>
+          <li>
+            <a href="#">Feb 2014</a>
+          </li>
+          <li>
+            <a href="#">Jan 2014</a>
+          </li>
+          <li>
+            <a href="#">Dec 2013</a>
+          </li>
+          <li>
+            <a href="#">Nov 2013</a>
+          </li>
+          <li>
+            <a href="#">Oct 2013</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <button type="button" class="btn btn-outline-primary">Newer</button>
+    <button type="button" class="btn btn-outline-secondary" disabled>Older</button>
+  </div>
+
+  <% include ./header_footer/footer %>

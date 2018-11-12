@@ -1,0 +1,78 @@
+<% include ../header_footer/header %>
+    <div class="row d-flex flex-nowrap justify-content-between align-items-center border-bottom">
+        <div class="col-md-4 pt-1">
+            <a class="text-muted" href="/signin">signin</a>
+        </div>
+        <div class="col-md-4 text-center">
+            <a class="text-dark" id="brand" href="/blogpost">Blogpost</a>
+        </div>
+        <div class="col-md-4 d-flex justify-content-end  align-items-center">
+            <form class="form-inline mt-3 mr-2">
+                <input type="text" class="form-control  mr-sm-2" id="inlineFormInputName2" placeholder="search">
+            </form>
+            <a class="text-muted" href="#">
+                <i class="fas fa-search"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="jumbotron bg-white text-center">
+        <h1 class="display-4" id="bigTitle">Hello, world!</h1>
+        <p class="lead">Build an effective pricing table for your potential customers with this Bootstrap example. It's built with default
+            Bootstrap components and utilities with little customization.</p>
+    </div>
+
+    <div class="card-deck text-center">
+        <div class="card">
+            <div class="card-header">
+                <h4>Free</h4>
+            </div>
+            <div class="card-body">
+                <h1>$0
+                    <small class="text-muted"> /m</small>
+                </h1>
+                <ul class="list-unstyled">
+                    <li>1 user</li>
+                    <li>2 GB storage</li>
+                    <li>Email support</li>
+                </ul>
+                <a class="btn btn-lg btn-outline-primary text-primary" href="/signup">Sign up free</a>
+
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h4>Pro</h4>
+            </div>
+            <div class="card-body">
+                <h1>$15
+                    <small class="text-muted"> /m</small>
+                </h1>
+                <ul class="list-unstyled">
+                    <li>5 users included</li>
+                    <li>10 GB storage</li>
+                    <li>Email support</li>
+                </ul>
+                <button class="btn btn-lg btn-primary">Get started</button>
+
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h4>Enterprise</h4>
+            </div>
+            <div class="card-body">
+                <h1>$29
+                    <small class="text-muted"> /m</small>
+                </h1>
+                <ul class="list-unstyled">
+                    <li>15 users included</li>
+                    <li>20 GB storage</li>
+                    <li>Email support</li>
+                </ul>
+                <button class="btn btn-lg btn-primary">Get started</button>
+
+            </div>
+        </div>
+    </div>
+<% include ../header_footer/footer %>

@@ -1,0 +1,49 @@
+<% include ../../header_footer/header %>
+<div class="row mt-2 bg-light justify-content-between">
+    <a class="d-flex align-items-center btn btn-light text-dark" href="/blogpost/travel">
+        <i class="far fa-arrow-alt-circle-left fa-3x text-dark pr-2"></i>Go Back</a>
+    <% if(currentUser) { %>
+    <div class="col-md-4 pt-1 d-flex justify-content-end align-items-center">
+        <a class="text-muted pr-2" href="/logout">Logout</a>
+        <a href="/profile/<%=currentUser._id%>" class="btn btn-light d-flex align-items-center">
+            <i class="fas fa-user fa-2x px-2"></i>
+            <h3 id="profile">
+                <%= currentUser.username %>
+            </h3>
+        </a>
+    </div>
+    <% } else { %>
+    <div class="col-md-4 pt-1 d-flex justify-content-end align-items-center">
+        <a class="text-muted" href="/signin">Signin</a>
+    </div>
+    <% } %>
+</div>
+<div class="row mt-5">
+    <div class="col-9">
+        <div class="d-flex flex-column">
+            <h1 class="display-4">
+                <%=foundTravelUser.title%>
+            </h1>
+            <p id="writer" class="text-muted">Post by
+                <%=foundTravelUser.author.name%>
+            </p>
+        </div>
+        <p class="lead">
+            <%=foundTravelUser.body%>
+        </p>
+    </div>
+    <div class="col-3 mt-5">
+        <hr class="my-4">
+        <div class="text-small">
+            Temperature
+        </div>
+        <div class="d-flex align-self-start">
+            <h4 id="temP" class="pr-4">35</h4> <span id="celcius"> C</span>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <img class="img-thumbnail" src="<%=foundTravelUser.picture%>">
+</div>
+
+<% include ../../header_footer/footer %>

@@ -1,0 +1,132 @@
+<% include ../header_footer/header %>
+<div class="row mt-2 bg-light d-flex justify-content-between">
+    <a class="d-flex align-items-center btn btn-light text-dark" href="/blogpost">
+        <i class="far fa-arrow-alt-circle-left fa-3x text-dark pr-2"></i>Go Back</a>
+    <% if(currentUser) { %>
+    <div class="col-md-4 pt-1 d-flex justify-content-end align-items-center">
+        <a class="text-muted pr-2" href="/logout">Logout</a>
+        <a href="/profile/<%=currentUser._id%>" class="btn btn-light d-flex align-items-center">
+            <i class="fas fa-user fa-2x px-2"></i>
+            <h3 id="profile">
+                <%= currentUser.username %>
+            </h3>
+        </a>
+    </div>
+    <% } else { %>
+    <div class="col-md-4 pt-1 d-flex justify-content-end align-items-center">
+        <a class="text-muted" href="/signin">Signin</a>
+    </div>
+    <% } %>
+</div>
+<div class="row py-4">
+    <div class="col-md-2 offset-1">
+        <i class="far fa-user-circle fa-5x"></i>
+    </div>
+    <div class="col-md-6">
+        <%Info.forEach(function(eachUser){%>
+        <% if(currentUser.username == eachUser.user.username) {%>
+        <h5>
+            <%= eachUser.firstname %>
+            <%= eachUser.lastname %>
+        </h5>
+        <%}%>
+        <%})%>
+        <p>RANKINGS :
+            <span>8/10</span>
+        </p>
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a href="#about" class="nav-link active show" id="about-tab" data-toggle="tab" aria-controls="home"
+                    aria-selected="true">About</a>
+            </li>
+            <li class="nav-item"></li>
+        </ul>
+    </div>
+    <div class="col-md-2">
+        <a href="/profile/<%= currentUser._id %>/edit" class="btn btn-light" role="button">Edit Profile</a>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-md-2 offset-1"></div>
+    <div class="col-md-8">
+        <div class="tab-content">
+            <div class="tab-pane fade active show" id="about" role="tabpanel">
+                <div class="row mb-1">
+                    <div class="col-md-6">Username</div>
+                    <div class="col-md-6">
+                        <%Info.forEach(function(eachUser){%>
+                        <% if(currentUser.username == eachUser.user.username) {%>
+                        <h5>
+                            <%= eachUser.user.username %>
+                        </h5>
+                        <%}%>
+                        <%})%>
+
+
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col-md-6">Fullname</div>
+                    <div class="col-md-6 ">
+                        <%Info.forEach(function(eachUser){%>
+                        <% if(currentUser.username == eachUser.user.username) {%>
+                        <h5>
+                            <%= eachUser.firstname %>
+                            <%= eachUser.lastname %>
+                        </h5>
+                        <%}%>
+                        <%})%>
+
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col-md-6">Email</div>
+                    <div class="col-md-6">
+                        <%Info.forEach(function(eachUser){%>
+                        <% if(currentUser.username == eachUser.user.username) {%>
+                        <h5>
+                            <%=eachUser.email%>
+                        </h5>
+                        <%}%>
+                        <%})%>
+
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col-md-6">Address</div>
+                    <div class="col-md-6">
+                        <%Info.forEach(function(eachUser){%>
+                        <% if(currentUser.username == eachUser.user.username) {%>
+                        <h5>
+                            <%=eachUser.address%>
+                        </h5>
+                            <%}%>
+                        <%})%>
+
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col-md-6">Address2</div>
+                    <div class="col-md-6">
+                        <%Info.forEach(function(eachUser){%>
+                        <% if(currentUser.username == eachUser.user.username) {%>
+                        <h5>
+                            <%=eachUser.address2%>
+                        </h5>
+                            <%}%>
+                        <%})%>
+                    </div>
+                </div>
+                <div class="row mb-1 d-flex justify-content-center">
+                    <a href="/profile/travel/<%=currentUser._id%>/new" class="btn btn-light">Create your new journey</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<% include ../header_footer/footer %>

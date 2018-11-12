@@ -1,0 +1,32 @@
+<% include ../header_footer/header %>
+  <div class="row mt-2 bg-light">
+    <a class="d-flex align-items-center btn btn-light text-dark" href="/blogpost"><i class="far fa-arrow-alt-circle-left fa-3x text-dark pr-2"></i>Go Back</a>
+  </div>
+  <div class="row justify-content-center" id="rowsignup">
+    <div id="verticalAlign">
+      <form id="form" action="/signin" method="POST">
+        <i class="fas fa-sign-in-alt fa-5x"></i>
+        <h2>Please sign in</h2>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter username">
+          <small id="emailHelp" class="form-text text-muted">After sign in we 'll show your username on top right bar</small>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Keep me log in</label>
+        </div>
+        <ul class="list-unstyled">
+          <li><button type="submit" class="btn btn-dark mb-2">Sign in</button></li>
+          <li><a class="btn btn-outline-dark" href="/register">Sign up</a></li>
+        </ul>
+        
+      </form>
+    </div>
+  </div>
+
+  <% include ../header_footer/footer %>

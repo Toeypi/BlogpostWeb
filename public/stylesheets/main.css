@@ -1,0 +1,46 @@
+#profile {
+    font-family: 'Playfair Display', serif;
+}
+#brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+#bigTitle {
+    font-family: 'Playfair Display', serif;
+    font-weight: bolder;
+    font-style: italic;
+    
+}
+.card-title{
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+#about,#archive {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-style: italic;
+}
+#archives {
+    margin-top: 30px;
+    padding: 0px 15px;
+}
+#archiveList{
+    list-style: none;
+    padding: 0px;
+}
+#bigTitle2{
+    font-family: 'Playfair Display', serif;
+    font-weight: bolder;
+    padding-bottom: 6;
+}
+#whyipsum {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+}
+#whereipsum{
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    
+}

@@ -1,0 +1,58 @@
+<% include ../header_footer/header %>
+    <div class="jumbotron bg-white text-center">
+        <h2>Checkout Form</h2>
+        <p class="lead">Below is an example form built entirely with Bootstrap's form controls. Each required form group has a validation
+            state that can be triggered by attempting to submit the form without completing it.</p>
+    </div>
+
+    <div class="row">
+        <div class="col-8">
+            <h4 class="mb-3">Information</h4>
+            <form action="/signup" method="POST">
+                <div class="row mb-3">
+                    <div class="col">
+                        <label>Firstname</label>
+                        <input type="text" name="info[firstname]" class="form-control" value required>
+                    </div>
+                    <div class="col">
+                        <label>Lastname</label>
+                        <input type="text" name="info[lastname]" class="form-control" value required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label>Username</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">@</span>
+                            </div>
+                            <input type="text" name="username" class="form-control" value required>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label>Password</label>
+                        <input type="password" name="password" class="form-control" value required>
+                    </div>
+
+                </div>
+                <div class="mb-3">
+                    <label>Email</label>
+                    <input type="text" name="info[email]" class="form-control" value required placeholder="you@example.com">
+                </div>
+                <div class="mb-3">
+                    <label>Address</label>
+                    <input type="text" name="info[address]" class="form-control" value required placeholder="1234 main st.">
+                </div>
+                <div class="mb-3">
+                    <label>Address 2
+                        <span class="text-muted">(Optional)</span>
+                    </label>
+                    <input type="text" name="info[address2]" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-lg btn-primary">submit</button>
+            </form>
+        </div>
+        
+    </div>
+
+    <% include ../header_footer/footer %>
