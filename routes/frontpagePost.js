@@ -4,6 +4,8 @@ var express = require('express'),
 var Travel = require('../models/Travel');
 var Info = require('../models/Info');
 
+var middleware = require('../middleware/index');
+
 
 
 router.get('/blogpost', function (req, res) {
@@ -28,7 +30,8 @@ router.get('/blogpost/travel/:id', function (req, res) {
     });
 });
 
-router.get('/profile/travel/:id/new', function (req, res) {
+router.get('/profile/travel/:id/new',middleware.isLoggedin, function (req, res) {
+    //use currentUser(logged in) id 
     Info.findOne({ "user.id": req.params.id }, function (err, foundInfo) {
         if (err) {
             console.log(err);
@@ -37,7 +40,8 @@ router.get('/profile/travel/:id/new', function (req, res) {
     });
 });
 
-router.put('/blogpost/travel/:id', function (req, res) {
+router.put('/blogpost/travel/:id',middleware.isLoggedin, function (req, res) {
+    //use currentUser(logged in) id 
     Info.findOne({ "user.id": req.params.id }, function (err, foundUser) {
         if (err) {
             console.log(err);
